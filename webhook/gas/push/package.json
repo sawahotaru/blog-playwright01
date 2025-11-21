@@ -1,0 +1,11 @@
+{
+  "name": "line-webhook",
+  "version": "1.0.0",
+    "private": true,
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.4.0"
+  }
+}
