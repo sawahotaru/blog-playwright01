@@ -5,7 +5,7 @@ const path = require('path');
   const extensionPath = path.join(__dirname, 'my-extension');
 
   const context = await chromium.launchPersistentContext('', {
-    headless: false,
+    headless: false, // 拡張はheadlessでは不安定なのでfalse
     args: [
       `--disable-extensions-except=${extensionPath}`,
       `--load-extension=${extensionPath}`,
@@ -24,7 +24,5 @@ const path = require('path');
   const page = await context.newPage();
   await page.goto(`chrome-extension://${extensionId}/popup.html`);
 
-  // 「Playwright公式を開く」ボタンを待つだけで、操作はしない
-  // ブラウザ上で手動で触ってみてください
   console.log('popup opened. try clicking the buttons!');
 })();
